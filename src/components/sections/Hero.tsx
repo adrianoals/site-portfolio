@@ -23,11 +23,18 @@ export default function Hero() {
       {/* Conteúdo principal */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Foto/Ilustração pessoal */}
+          {/* Foto pessoal */}
           <div className="mb-8">
             <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-1">
-              <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                <span className="text-2xl sm:text-4xl font-bold text-white">AL</span>
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/adriano-profile.jpg"
+                  alt="Adriano Lima Santos - Desenvolvedor Full-Stack"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
