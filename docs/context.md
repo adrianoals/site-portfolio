@@ -1,11 +1,3 @@
-Boa! 👌 Agora ficou claro:
-
-* O **site da XNAP** já está pronto, institucional, focado em atrair clientes.
-* Agora você quer um **site de portfólio pessoal**, para se posicionar como desenvolvedor e conquistar **vagas de emprego**.
-* E a ideia é **aproveitar a mesma estrutura visual** (hero forte, seções bem divididas, cases etc.), mas adaptando para o **formato de portfólio individual**.
-
----
-
 ## 🔹 Estrutura sugerida para o **seu site portfólio pessoal** (baseado no modelo da XNAP)
 
 ### **1. Hero (Home)**
@@ -65,14 +57,9 @@ Boa! 👌 Agora ficou claro:
 
 ---
 
-### **5. Depoimentos / Reconhecimentos**
-
-* Se tiver feedbacks de clientes, colegas ou professores → ótimo.
-* Caso não tenha, pode substituir por “Certificações” ou “Cursos Relevantes”.
-
 ---
 
-### **6. Formação & Experiência**
+### **5. Formação & Experiência**
 
 * Linha do tempo com:
 
@@ -82,7 +69,7 @@ Boa! 👌 Agora ficou claro:
 
 ---
 
-### **7. Contato**
+### **6. Contato**
 
 * CTA direto:
 
@@ -112,83 +99,4 @@ Pra recrutadores, o site precisa **provar competência**. Então o foco aqui dev
 * Passar **profissionalismo** (CV, LinkedIn, GitHub sempre visíveis).
 
 ---
-
-
-Perfeito 👌 Aqui vai a **estrutura em texto das seções do seu portfólio pessoal**:
-
----
-
-### OPCAO 2
-### 1. **Home / Hero**
-
-* Foto ou avatar profissional
-* Headline forte (quem você é + foco)
-* Subheadline (o que você entrega)
-* Botões de CTA: **Ver Projetos** | **Baixar CV**
-
----
-
-### 2. **Sobre Mim**
-
-* Breve biografia
-* Diferenciais (mentalidade ponta-a-ponta, background em consultoria, etc.)
-* Valores e estilo de trabalho
-
----
-
-### 3. **Habilidades**
-
-* Backend (Python, Django, FastAPI)
-* Frontend (React, Next.js, TypeScript)
-* Banco de Dados (Postgres, Supabase)
-* Infra & DevOps (Docker, Traefik, AWS/Vercel)
-* IA & Automação (LangChain, LLMs, n8n, RPA)
-
----
-
-### 4. **Tecnologias (opcional / pode ser junto com habilidades)**
-
-* Grid de logos das stacks que você domina
-
----
-
-### 5. **Formação & Experiência**
-
-* Linha do tempo com empresas/projetos
-* Formação acadêmica (inclui MBA em Engenharia de Software com IA)
-
----
-
-### 6. **Projetos**
-
-* Grid de cases com título, descrição curta e imagem
-
-  * Simulador de Consórcios
-  * Sistema de Sorteio de Vagas de Garagem
-  * Sistema de Leitura de Água e Gás
-  * Chatbot WhatsApp (Integração com Supabase / FastAPI)
-  * Website da Laudok
-
----
-
-### 7. **Depoimentos / Certificações**
-
-* Feedbacks de clientes/parceiros **ou** certificações relevantes
-
----
-
-### 8. **Blog (opcional)**
-
-* Artigos curtos sobre IA, automação e dev fullstack
-
----
-
-### 9. **Contato**
-
-* Formulário de contato
-* Links: LinkedIn, GitHub, WhatsApp, Email
-* CTA: **Vamos conversar**
-
----
-
 
