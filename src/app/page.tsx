@@ -7,13 +7,13 @@ import Contact from '../components/sections/Contact';
 
 export default function Home() {
   return (
-    <main>
+    <div className="relative">
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Experience />
       <Contact />
-    </main>
+    </div>
   );
 }

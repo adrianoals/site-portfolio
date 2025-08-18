@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background com gradiente radial */}
       <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-black to-black"></div>
       
@@ -25,15 +25,15 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           {/* Foto/Ilustração pessoal */}
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-1">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-1">
               <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                <span className="text-4xl font-bold text-white">AL</span>
+                <span className="text-2xl sm:text-4xl font-bold text-white">AL</span>
               </div>
             </div>
           </div>
 
           {/* Headline pessoal */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Desenvolvedor{' '}
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Full-Stack
@@ -45,39 +45,39 @@ export default function Hero() {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
             Crio soluções escaláveis e inteligentes que unem backend sólido, frontend moderno e automação com Inteligência Artificial.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4">
             <Link
               href="#projetos"
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
             >
               Ver Projetos
             </Link>
             <Link
               href="#contato"
-              className="border-2 border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+              className="w-full sm:w-auto border-2 border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
               Baixar CV
             </Link>
           </div>
 
           {/* Diferenciais técnicos */}
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 opacity-60 px-4">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-gray-400 text-sm">Backend Python</span>
+              <span className="text-gray-400 text-xs sm:text-sm">Backend Python</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-gray-400 text-sm">Frontend React/Next.js</span>
+              <span className="text-gray-400 text-xs sm:text-sm">Frontend React/Next.js</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-gray-400 text-sm">IA & Automação</span>
+              <span className="text-gray-400 text-xs sm:text-sm">IA & Automação</span>
             </div>
           </div>
         </div>

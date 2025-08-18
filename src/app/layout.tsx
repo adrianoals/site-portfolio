@@ -47,9 +47,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.variable} antialiased bg-black text-white`}>
         <Navbar />
-        <main>
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>
