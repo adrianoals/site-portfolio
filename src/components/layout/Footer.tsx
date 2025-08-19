@@ -109,7 +109,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Adriano Lima Santos. Todos os direitos reservados.
+              © 2025 Adriano Lima Santos. Todos os direitos reservados.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
               Desenvolvido com ❤️ usando Next.js e Tailwind CSS

@@ -107,10 +107,7 @@ export default function Skills() {
                   {skill.title}
                 </h3>
 
-                {/* Descrição */}
-                <p className="text-gray-300 leading-relaxed">
-                  {skill.description}
-                </p>
+
 
                 {/* Indicador de hover */}
                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -123,21 +120,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* CTA adicional */}
-        <div className="text-center mt-16">
-          <p className="text-gray-400 mb-6">
-            Quer ver essas habilidades em ação?
-          </p>
-          <a
-            href="#projetos"
-            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
-          >
-            Ver Projetos
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
+
       </div>
     </section>
   );

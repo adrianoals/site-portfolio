@@ -196,23 +196,8 @@ export default function Technologies() {
 
   return (
     <section id="tecnologias" className="py-20 px-4 relative overflow-hidden">
-      {/* Background claro para alternância */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/5 via-gray-900 to-black"></div>
-      
-      {/* Gradientes radiais adicionais */}
-      <div className="absolute inset-0">
-        {/* Gradiente radial principal */}
-        <div className="absolute inset-0 bg-gradient-radial from-blue-500/3 via-transparent to-transparent" 
-             style={{background: 'radial-gradient(50% 50% at 50% 50%, rgba(138, 165, 255, 0.03) 0%, rgba(171, 171, 171, 0) 100%)'}}></div>
-        
-        {/* Gradiente radial secundário */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-blue-400/2 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-blue-600/2 to-transparent rounded-full blur-3xl"></div>
-        
-        {/* Gradiente linear diagonal */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/3 via-transparent to-transparent" 
-             style={{background: 'linear-gradient(105deg, rgba(41, 52, 255, 0.03) -8%, rgba(36, 65, 212, 0) 50%)'}}></div>
-      </div>
+      {/* Background escuro para alternância */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-gray-900"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header da seção */}
