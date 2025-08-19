@@ -83,8 +83,8 @@ export default function Experience() {
 
   return (
     <section id="experiencia" className="py-20 px-4 relative overflow-hidden">
-      {/* Background claro para alternância */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/5 via-gray-900 to-black"></div>
+      {/* Background escuro para alternância */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-gray-900"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header da seção */}

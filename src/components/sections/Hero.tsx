@@ -6,8 +6,8 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background com gradiente radial */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-black to-black"></div>
+      {/* Background escuro para alternância */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-gray-900"></div>
       
       {/* Efeitos de luz decorativos */}
       <div className="absolute inset-0">
@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <Image
-                  src="/images/adriano-profile.jpg"
+                  src="/images/adriano-profile2.jpg"
                   alt="Adriano Lima Santos - Desenvolvedor Full-Stack"
                   width={128}
                   height={128}
