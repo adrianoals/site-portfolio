@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: "Desenvolvedor Full-Stack especializado em Python, Next.js e Inteligência Artificial. Crio soluções escaláveis e inteligentes que unem backend sólido, frontend moderno e automação com IA.",
   keywords: "desenvolvedor, full-stack, python, next.js, react, typescript, IA, inteligência artificial, django, fastapi, postgresql, supabase",
   authors: [{ name: "Adriano Lima Santos" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     title: "Adriano Lima Santos - Desenvolvedor Full-Stack & IA",
     description: "Desenvolvedor Full-Stack especializado em Python, Next.js e Inteligência Artificial",

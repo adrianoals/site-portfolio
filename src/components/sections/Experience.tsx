@@ -3,13 +3,13 @@
 export default function Experience() {
   const experience = [
     {
-      year: '2023 - Presente',
+      year: '2024 - Presente',
       title: 'Desenvolvedor Full-Stack',
       company: 'XNAP - Soluções de Software',
       description: 'Desenvolvimento de soluções personalizadas, chatbots inteligentes e sistemas de automação para clientes de diversos setores.',
       technologies: ['Python', 'Django', 'FastAPI', 'Next.js', 'React', 'PostgreSQL', 'OpenAI', 'LangChain'],
       achievements: [
-        'Desenvolvimento de 5 projetos principais com resultados mensuráveis',
+        'Desenvolvimento de projetos principais com resultados mensuráveis',
         'Implementação de chatbots inteligentes com IA',
         'Automação de processos críticos para clientes',
         'Integração de APIs e sistemas legados'
@@ -45,14 +45,14 @@ export default function Experience() {
 
   const education = [
     {
-      year: '2024',
+      year: '2025',
       title: 'MBA em Engenharia de Software com IA',
       institution: 'Faculdade de Tecnologia',
       description: 'Especialização em desenvolvimento de software com foco em Inteligência Artificial, automação e arquitetura de sistemas.',
       highlights: ['Machine Learning', 'Arquitetura de Software', 'Gestão de Projetos', 'IA Aplicada']
     },
     {
-      year: '2021',
+      year: '2023',
       title: 'Graduação em Sistemas de Informação',
       institution: 'Universidade de Tecnologia',
       description: 'Formação sólida em desenvolvimento de software, banco de dados e arquitetura de sistemas.',

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#000000"/>
+  <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Inter, Arial, Helvetica, sans-serif"
+        font-size="180" font-weight="700" fill="#ffffff">A</text>
+  <!-- Simple black background with centered white 'A' -->
+  <!-- Saved as SVG so it scales crisply across sizes -->
+</svg>
+
+
