@@ -45,15 +45,15 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Full-Stack
             </span>
-            {' '}especializado em Python, Next.js e{' '}
+            {' '}especializado em Python para{' '}
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              IA
+              IA e Automação
             </span>
           </h1>
 
           {/* Subtítulo */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-            Crio soluções escaláveis e inteligentes que unem backend sólido, frontend moderno e automação com Inteligência Artificial.
+            Crio soluções inteligentes e automações complexas com Python e IA, transformando processos e impulsionando resultados para negócios.
           </p>
 
           {/* CTAs */}
@@ -80,11 +80,11 @@ export default function Hero() {
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-gray-400 text-xs sm:text-sm">Frontend React/Next.js</span>
+              <span className="text-gray-400 text-xs sm:text-sm">Python Backend</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-gray-400 text-xs sm:text-sm">IA & Automação</span>
+              <span className="text-gray-400 text-xs sm:text-sm">React/Next.js</span>
             </div>
           </div>
         </div>

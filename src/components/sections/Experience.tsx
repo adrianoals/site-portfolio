@@ -4,41 +4,42 @@ export default function Experience() {
   const experience = [
     {
       year: '2024 - Presente',
-      title: 'Desenvolvedor Full-Stack',
-      company: 'XNAP - Soluções de Software',
-      description: 'Desenvolvimento de soluções personalizadas, chatbots inteligentes e sistemas de automação para clientes de diversos setores.',
-      technologies: ['Python', 'Django', 'FastAPI', 'Next.js', 'React', 'PostgreSQL', 'OpenAI', 'LangChain'],
+      title: 'Fundador & Desenvolvedor Full-Stack',
+      company: 'XNAP – Soluções de Software',
+      description: 'Fundador da XNAP, empresa de software onde desenvolvo soluções personalizadas, como simuladores financeiros, chatbots inteligentes e sistemas de automação para clientes de diversos setores.',
+      technologies: ['Python', 'Django', 'FastAPI', 'Next.js', 'Supabase', 'n8n', 'Docker', 'LLMs', 'OpenAI', 'LangChain'],
       achievements: [
-        'Desenvolvimento de projetos principais com resultados mensuráveis',
-        'Implementação de chatbots inteligentes com IA',
-        'Automação de processos críticos para clientes',
-        'Integração de APIs e sistemas legados'
+        'Simulador de consórcios para a Unifisa (8.000+ simulações/mês)',
+        'Sistema de sorteio de vagas de garagem (Villa Nova Condomínios)',
+        'Sistema de leitura remota de medidores (Leitura Nova)',
+        'Chatbot de doações (Remar Brasil)',
+        'Sites institucionais para clientes diversos'
       ]
     },
     {
-      year: '2022 - 2023',
-      title: 'Desenvolvedor Frontend',
-      company: 'Freelancer',
-      description: 'Desenvolvimento de interfaces modernas e responsivas para clientes diversos, focando em experiência do usuário.',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Figma'],
+      year: '2023 - 2024',
+      title: 'Desenvolvedor de Software (Freelancer)',
+      company: 'Trabalho Independente',
+      description: 'Atuei de forma independente em projetos de desenvolvimento web, criando soluções sob medida para pequenos negócios e empreendedores. Essa etapa foi a base para a fundação da XNAP.',
+      technologies: ['Python', 'Django', 'JavaScript', 'Node.js', 'React', 'Next.js', 'PostgreSQL', 'Supabase', 'Docker'],
       achievements: [
-        'Criação de 3 landing pages de alta conversão',
-        'Desenvolvimento de dashboards interativos',
-        'Otimização de performance e SEO',
-        'Implementação de design systems'
+        'Landing pages otimizadas para conversão',
+        'Dashboards interativos',
+        'Primeiras aplicações full-stack com Python/Django',
+        'Desenvolvimento de soluções personalizadas para pequenos negócios'
       ]
     },
     {
-      year: '2021 - 2022',
-      title: 'Desenvolvedor Backend',
-      company: 'Projetos Acadêmicos',
-      description: 'Desenvolvimento de sistemas backend para projetos acadêmicos e pessoais, focando em arquitetura escalável.',
-      technologies: ['Python', 'Django', 'PostgreSQL', 'Docker', 'AWS'],
+      year: 'Anterior a 2022',
+      title: 'Consultoria e Gestão',
+      company: 'EY, Stone e UCon Consultoria',
+      description: 'Atuei em empresas como EY, Stone e UCon Consultoria, além de ter sido sócio de negócio próprio. Essa vivência me trouxe visão estratégica e de processos, que aplico hoje no desenvolvimento de software orientado a valor.',
+      technologies: ['Gestão de Projetos', 'Processos de Negócio', 'Consultoria Estratégica', 'Análise de Dados'],
       achievements: [
-        'Desenvolvimento de API RESTful para sistema de gestão',
-        'Implementação de autenticação JWT',
-        'Deploy em cloud com Docker e AWS',
-        'Documentação técnica completa'
+        'Experiência em consultoria estratégica com grandes empresas',
+        'Visão de processos de negócio e otimização',
+        'Gestão de projetos complexos',
+        'Desenvolvimento de estratégias empresariais'
       ]
     }
   ];
@@ -47,16 +48,16 @@ export default function Experience() {
     {
       year: '2025',
       title: 'MBA em Engenharia de Software com IA',
-      institution: 'Faculdade de Tecnologia',
+      institution: 'FCTech',
       description: 'Especialização em desenvolvimento de software com foco em Inteligência Artificial, automação e arquitetura de sistemas.',
       highlights: ['Machine Learning', 'Arquitetura de Software', 'Gestão de Projetos', 'IA Aplicada']
     },
     {
       year: '2023',
-      title: 'Graduação em Sistemas de Informação',
-      institution: 'Universidade de Tecnologia',
-      description: 'Formação sólida em desenvolvimento de software, banco de dados e arquitetura de sistemas.',
-      highlights: ['Desenvolvimento Web', 'Banco de Dados', 'Redes de Computadores', 'Gestão de TI']
+      title: 'Análise e Desenvolvimento de Sistemas',
+      institution: 'FIAP',
+      description: 'Formação em FIAP com sólida base em desenvolvimento e arquitetura de software.',
+      highlights: ['Desenvolvimento Web', 'Banco de Dados', 'Arquitetura de Software', 'Programação']
     }
   ];
 

@@ -107,7 +107,7 @@ export default function About() {
             Quem é Adriano Lima Santos?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto hover:text-white transition-colors duration-300">
-            Desenvolvedor apaixonado por tecnologia, especializado em criar soluções que unem o melhor do backend e frontend com inteligência artificial.
+            Desenvolvedor apaixonado por tecnologia, especializado em Python para backend e IA, criando soluções inteligentes e automações complexas que transformam negócios.
           </p>
         </div>
 
@@ -119,15 +119,17 @@ export default function About() {
               Minha Trajetória
             </h3>
             <p className="text-gray-300 leading-relaxed text-lg hover:text-white transition-colors duration-300">
-              Sou um desenvolvedor Full-Stack com foco em Python, React e Next.js, 
-              especializado em criar soluções escaláveis e inteligentes. Minha jornada 
-              na tecnologia começou com a paixão por resolver problemas complexos através do código.
+              Sou um desenvolvedor Full-Stack com foco em Python para backend e IA, 
+              especializado em criar soluções escaláveis e inteligentes. No frontend, 
+              desenvolvo interfaces com JavaScript, React e Next.js, sempre buscando 
+              aprimorar minhas habilidades e entregar soluções de qualidade. 
+              Minha jornada na tecnologia começou com a paixão por resolver problemas complexos através do código.
             </p>
             <p className="text-gray-300 leading-relaxed text-lg hover:text-white transition-colors duration-300">
               Com formação em Análise de Desenvolvimento de Sistemas e cursando MBA em Engenharia de Software com IA, combino conhecimento técnico sólido com visão estratégica para entregar produtos que realmente fazem a diferença.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              {['Full-Stack', 'Python', 'React/Next.js', 'IA & Automação'].map((skill, index) => (
+              {['Python Backend', 'IA & Automação', 'JS/React/Next.js', 'Soluções Inteligentes'].map((skill, index) => (
                 <div 
                   key={skill}
                   className="px-4 py-2 bg-blue-600/20 border border-blue-500/30 rounded-full hover:bg-blue-600/40 hover:border-blue-500/60 hover:scale-110 transition-all duration-300 transform cursor-pointer"
