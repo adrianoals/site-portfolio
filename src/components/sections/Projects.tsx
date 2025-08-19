@@ -9,8 +9,8 @@ export default function Projects() {
       id: 1,
       title: 'Simulador de Consórcios',
       client: 'Unifisa Consórcio Nacional',
-      logo: '/unifisa-logo.png',
-      image: "/case-1-dashboard.png",
+      logo: '/images/projects/unifisa-logo.png',
+      image: "/images/projects/case-1-dashboard.png",
       challenge: 'Propostas geradas manualmente em várias planilhas, gerando erros e retrabalho.',
       solution: 'Plataforma web que automatiza cálculos, gera propostas em PDF e integra chatbot no WhatsApp.',
       results: [
@@ -26,8 +26,8 @@ export default function Projects() {
       id: 2,
       title: 'Chatbot de Coleta de Doações',
       client: 'Remar Brasil',
-      logo: '/remar-logo.jpg',
-      image: '/case-2-chatbot.png',
+      logo: '/images/projects/remar-logo.jpg',
+      image: '/images/projects/case-2-chatbot.png',
       challenge: 'Dificuldade na qualificação de itens e registro de doadores.',
       solution: 'Chatbot inteligente que guia a doação, filtra informações e atualiza banco de dados.',
       results: [
@@ -43,8 +43,8 @@ export default function Projects() {
       id: 3,
       title: 'Sistema de Coleta e Portal',
       client: 'Leitura Nova (Água & Gás)',
-      logo: '/leitura-nova-logo.png',
-      image: '/case-3-portal.png',
+      logo: '/images/projects/leitura-nova-logo.png',
+      image: '/images/projects/case-3-portal.png',
       challenge: 'Processos manuais de coleta de fotos de medidores e falta de transparência.',
       solution: 'Integração WhatsApp ↔ Google Sheets/Drive e portal web com histórico de consumo em tempo real.',
       results: [
@@ -60,8 +60,8 @@ export default function Projects() {
       id: 4,
       title: 'Sistema de Sorteio de Vagas',
       client: 'Vila Nova Condomínios',
-      logo: '/vila-nova-logo.png',
-      image: '/case-4-sorteio.png',
+      logo: '/images/projects/vila-nova-logo.png',
+      image: '/images/projects/case-4-sorteio.png',
       challenge: 'Alocação manual de vagas, sem transparência e conflitos entre moradores.',
       solution: 'Aplicação web com algoritmo de sorteio automático e painel de auditoria.',
       results: [
@@ -77,8 +77,8 @@ export default function Projects() {
       id: 5,
       title: 'Website e Dashboard',
       client: 'Laudok',
-      logo: '/laudok-logo.png',
-      image: '/case-5-dashboard.png',
+      logo: '/images/projects/laudok-logo.png',
+      image: '/images/projects/case-5-dashboard.png',
       challenge: 'Modernizar site e implementar fluxo de pagamentos para relatórios de engenharia.',
       solution: 'Desenvolvimento de dashboard interativo e checkout simplificado.',
       results: [
@@ -157,9 +157,13 @@ export default function Projects() {
                   {projects[currentProject].title}
                 </h3>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center">
-                    <span className="text-blue-400 font-medium text-sm">Logo</span>
-                  </div>
+                  <Image
+                    src={projects[currentProject].logo}
+                    alt={`${projects[currentProject].client} logo`}
+                    width={48}
+                    height={48}
+                    className="rounded-lg bg-gray-800 object-contain"
+                  />
                   <p className="text-blue-400 font-medium text-lg">
                     {projects[currentProject].client}
                   </p>
@@ -214,9 +218,14 @@ export default function Projects() {
             {/* Imagem do projeto */}
             <div className="relative">
               <div className="relative aspect-video rounded-2xl border border-white/10 overflow-hidden bg-gray-900/60">
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <span className="text-gray-400 text-lg">Screenshot do projeto</span>
-                </div>
+                <Image
+                  src={projects[currentProject].image}
+                  alt={`Screenshot do projeto: ${projects[currentProject].title}`}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  priority={currentProject === 0}
+                />
               </div>
             </div>
           </div>
