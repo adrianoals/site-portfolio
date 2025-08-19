@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Site Portfolio - Adriano Lima Santos
 
-## Getting Started
+Portfolio pessoal desenvolvido com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## 🚀 Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Design responsivo e moderno
+- Seções: Hero, Sobre, Habilidades, Experiência, Projetos e Contato
+- Timeline interativa com logos das instituições
+- Seção de diferenciais destacados
+- Animações e transições suaves
+
+## 🎨 Personalização dos Logos
+
+Para personalizar os logos das instituições, substitua os arquivos SVG na pasta `public/images/`:
+
+- `fiap-logo.svg` - Logo da FIAP
+- `fctech-logo.svg` - Logo da FCTech  
+- `xnap-logo.svg` - Logo da XNAP
+
+### Formatos suportados:
+- **SVG** (recomendado para melhor qualidade)
+- **PNG** (até 32x32px para melhor performance)
+- **JPG** (não recomendado para logos)
+
+### Dimensões recomendadas:
+- **SVG**: 32x32px viewBox
+- **PNG/JPG**: 32x32px ou 64x64px
+
+## 🛠️ Tecnologias
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Deploy**: Vercel (recomendado)
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                 # App Router do Next.js
+├── components/          # Componentes React
+│   ├── layout/         # Componentes de layout
+│   └── sections/       # Seções da página
+public/
+├── images/             # Imagens e logos
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como executar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instalar dependências
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Executar em desenvolvimento
+npm run dev
 
-## Learn More
+# Build para produção
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Executar produção
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Responsividade
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O site é totalmente responsivo e funciona em:
+- 📱 Mobile (320px+)
+- 📱 Tablet (768px+)
+- 💻 Desktop (1024px+)
+- 🖥️ Large screens (1280px+)
 
-## Deploy on Vercel
+## 🎯 Próximas melhorias
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Adicionar modo escuro/claro
+- [ ] Implementar blog integrado
+- [ ] Adicionar sistema de analytics
+- [ ] Otimizar performance com lazy loading
+- [ ] Adicionar testes automatizados
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Desenvolvido com ❤️ por Adriano Lima Santos
