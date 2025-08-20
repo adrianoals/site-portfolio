@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { downloadCV } from '@/utils/download';
 
 export default function Footer() {
   const socialLinks = [
@@ -92,15 +93,15 @@ export default function Footer() {
             </div>
             
             <div className="pt-4">
-              <Link
-                href="#contato"
+              <button
+                onClick={() => downloadCV()}
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
               >
                 Baixar CV
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>

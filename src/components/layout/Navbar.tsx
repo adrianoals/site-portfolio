@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { downloadCV } from '@/utils/download';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,12 +44,12 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link
-              href="#contato"
+            <button
+              onClick={() => downloadCV()}
               className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
             >
               Baixar CV
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -79,13 +80,12 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-4">
-                <Link
-                  href="#contato"
-                  className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 block text-center"
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  onClick={() => { downloadCV(); setIsMenuOpen(false); }}
+                  className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 block text-center w-full"
                 >
                   Baixar CV
-                </Link>
+                </button>
               </div>
             </div>
           </div>
