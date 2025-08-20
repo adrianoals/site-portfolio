@@ -1,6 +1,9 @@
 'use client';
 
 export default function Experience() {
+  // Flag para controlar a exibição da seção de certificações
+  const showCerts = false;
+
   const experience = [
     {
       year: '2024 - Presente',
@@ -69,9 +72,9 @@ export default function Experience() {
       description: 'Especialização em desenvolvimento com Supabase, incluindo autenticação, APIs em tempo real e banco de dados PostgreSQL.'
     },
     {
-      name: 'Docker para Desenvolvedores',
-      issuer: 'Docker Inc.',
-      year: '2023',
+      name: 'Descomplicando',
+      issuer: 'Linux Tips',
+      year: '2025',
       description: 'Containerização de aplicações, orquestração com Docker Compose e boas práticas de desenvolvimento.'
     },
     {
@@ -211,33 +214,35 @@ export default function Experience() {
         </div>
 
         {/* Certificações */}
-        <div>
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">
-            Certificações & Cursos
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-900/80 to-gray-800/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
+        {showCerts && (
+          <div>
+            <h3 className="text-3xl font-bold text-white mb-12 text-center">
+              Certificações & Cursos
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-900/80 to-gray-800/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                  
+                  <h4 className="text-lg font-bold text-white mb-2">
+                    {cert.name}
+                  </h4>
+                  <p className="text-blue-400 font-medium text-sm mb-2">
+                    {cert.issuer} • {cert.year}
+                  </p>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {cert.description}
+                  </p>
                 </div>
-                
-                <h4 className="text-lg font-bold text-white mb-2">
-                  {cert.name}
-                </h4>
-                <p className="text-blue-400 font-medium text-sm mb-2">
-                  {cert.issuer} • {cert.year}
-                </p>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {cert.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* CTA */}
         <div className="text-center mt-16">

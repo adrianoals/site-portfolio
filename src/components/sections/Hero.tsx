@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { downloadCV } from '@/utils/download';
 
 export default function Hero() {
   return (
@@ -64,12 +65,12 @@ export default function Hero() {
             >
               Ver Projetos
             </Link>
-            <Link
-              href="#contato"
+            <button
+              onClick={() => downloadCV()}
               className="w-full sm:w-auto border-2 border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
               Baixar CV
-            </Link>
+            </button>
           </div>
 
           {/* Diferenciais técnicos */}
