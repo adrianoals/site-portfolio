@@ -11,9 +11,17 @@ interface ContactFormData {
   agreeTerms: boolean;
 }
 
+interface ContactFormErrors {
+  name?: string;
+  email?: string;
+  company?: string;
+  message?: string;
+  agreeTerms?: string;
+}
+
 interface ContactFormState {
   data: ContactFormData;
-  errors: Partial<ContactFormData>;
+  errors: ContactFormErrors;
   isSubmitting: boolean;
   isSubmitted: boolean;
   submitError?: string;
@@ -35,7 +43,7 @@ export default function Contact() {
   });
 
   const validateForm = (): boolean => {
-    const errors: Partial<ContactFormData> = {};
+    const errors: ContactFormErrors = {};
 
     // Validação do nome
     if (!formState.data.name.trim()) {
@@ -71,12 +79,17 @@ export default function Contact() {
     const { name, value, type } = e.target;
     const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
     
-    setFormState(prev => ({
-      ...prev,
-      data: { ...prev.data, [name]: newValue },
-      errors: { ...prev.errors, [name]: undefined }, // Limpa erro do campo
-      submitError: undefined // Limpa erro de submissão
-    }));
+    setFormState(prev => {
+      const newErrors = { ...prev.errors };
+      delete newErrors[name as keyof ContactFormErrors];
+      
+      return {
+        ...prev,
+        data: { ...prev.data, [name]: newValue },
+        errors: newErrors,
+        submitError: undefined
+      };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
