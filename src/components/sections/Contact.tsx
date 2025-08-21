@@ -3,27 +3,139 @@
 import { useState } from 'react';
 import { downloadCV } from '@/utils/download';
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  company: string;
+  message: string;
+  agreeTerms: boolean;
+}
+
+interface ContactFormState {
+  data: ContactFormData;
+  errors: Partial<ContactFormData>;
+  isSubmitting: boolean;
+  isSubmitted: boolean;
+  submitError?: string;
+}
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-    agreeTerms: false
+  const [formState, setFormState] = useState<ContactFormState>({
+    data: {
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+      agreeTerms: false
+    },
+    errors: {},
+    isSubmitting: false,
+    isSubmitted: false,
+    submitError: undefined
   });
+
+  const validateForm = (): boolean => {
+    const errors: Partial<ContactFormData> = {};
+
+    // Validação do nome
+    if (!formState.data.name.trim()) {
+      errors.name = 'Nome é obrigatório';
+    } else if (formState.data.name.trim().length < 2) {
+      errors.name = 'Nome deve ter pelo menos 2 caracteres';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(formState.data.name.trim())) {
+      errors.name = 'Nome deve conter apenas letras';
+    }
+
+    // Validação do email
+    if (!formState.data.email.trim()) {
+      errors.email = 'Email é obrigatório';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.data.email.trim())) {
+      errors.email = 'Email deve ter um formato válido';
+    }
+
+    // Validação da mensagem
+    if (!formState.data.message.trim()) {
+      errors.message = 'Mensagem é obrigatória';
+    }
+
+    // Validação dos termos
+    if (!formState.data.agreeTerms) {
+      errors.agreeTerms = 'Você deve concordar com os termos';
+    }
+
+    setFormState(prev => ({ ...prev, errors }));
+    return Object.keys(errors).length === 0;
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
-    setFormData(prev => ({
+    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+    
+    setFormState(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      data: { ...prev.data, [name]: newValue },
+      errors: { ...prev.errors, [name]: undefined }, // Limpa erro do campo
+      submitError: undefined // Limpa erro de submissão
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica de envio do formulário
-    console.log('Form data:', formData);
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setFormState(prev => ({ ...prev, isSubmitting: true, submitError: undefined }));
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState.data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Sucesso
+        setFormState(prev => ({
+          ...prev,
+          isSubmitted: true,
+          isSubmitting: false,
+          data: {
+            name: '',
+            email: '',
+            company: '',
+            message: '',
+            agreeTerms: false
+          }
+        }));
+      } else {
+        // Erro
+        setFormState(prev => ({
+          ...prev,
+          isSubmitting: false,
+          submitError: result.error || 'Erro ao enviar mensagem'
+        }));
+      }
+    } catch (error) {
+      setFormState(prev => ({
+        ...prev,
+        isSubmitting: false,
+        submitError: 'Erro de conexão. Verifique sua internet e tente novamente.'
+      }));
+    }
+  };
+
+  const resetForm = () => {
+    setFormState(prev => ({
+      ...prev,
+      isSubmitted: false,
+      submitError: undefined
+    }));
   };
 
   const contactInfo = [
@@ -152,6 +264,42 @@ export default function Contact() {
                 Envie uma Mensagem
               </h3>
               
+              {/* Mensagem de sucesso */}
+              {formState.isSubmitted && (
+                <div className="mb-6 p-4 bg-green-600/20 border border-green-500/30 rounded-lg">
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h4 className="text-green-400 font-semibold">Mensagem Enviada!</h4>
+                      <p className="text-green-300 text-sm">Obrigado pelo contato. Responderei em breve!</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={resetForm}
+                    className="mt-3 text-green-400 hover:text-green-300 text-sm underline"
+                  >
+                    Enviar outra mensagem
+                  </button>
+                </div>
+              )}
+
+              {/* Mensagem de erro */}
+              {formState.submitError && (
+                <div className="mb-6 p-4 bg-red-600/20 border border-red-500/30 rounded-lg">
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <h4 className="text-red-400 font-semibold">Erro ao Enviar</h4>
+                      <p className="text-red-300 text-sm">{formState.submitError}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Nome */}
                 <div>
@@ -161,12 +309,19 @@ export default function Contact() {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
+                    value={formState.data.name}
                     onChange={handleInputChange}
                     placeholder="Qual é o seu nome?"
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                    required
+                    className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none transition-colors duration-300 ${
+                      formState.errors.name 
+                        ? 'border-red-500/50 focus:border-red-500' 
+                        : 'border-white/10 focus:border-blue-500'
+                    }`}
+                    disabled={formState.isSubmitting}
                   />
+                  {formState.errors.name && (
+                    <p className="mt-1 text-red-400 text-sm">{formState.errors.name}</p>
+                  )}
                 </div>
                 
                 {/* Email */}
@@ -177,12 +332,19 @@ export default function Contact() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
+                    value={formState.data.email}
                     onChange={handleInputChange}
                     placeholder="Qual é o seu e-mail?"
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                    required
+                    className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none transition-colors duration-300 ${
+                      formState.errors.email 
+                        ? 'border-red-500/50 focus:border-red-500' 
+                        : 'border-white/10 focus:border-blue-500'
+                    }`}
+                    disabled={formState.isSubmitting}
                   />
+                  {formState.errors.email && (
+                    <p className="mt-1 text-red-400 text-sm">{formState.errors.email}</p>
+                  )}
                 </div>
                 
                 {/* Empresa */}
@@ -193,10 +355,11 @@ export default function Contact() {
                   <input
                     type="text"
                     name="company"
-                    value={formData.company}
+                    value={formState.data.company}
                     onChange={handleInputChange}
                     placeholder="Qual a sua empresa? (opcional)"
                     className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
+                    disabled={formState.isSubmitting}
                   />
                 </div>
                 
@@ -207,39 +370,68 @@ export default function Contact() {
                   </label>
                   <textarea
                     name="message"
-                    value={formData.message}
+                    value={formState.data.message}
                     onChange={handleInputChange}
                     placeholder="Conte sobre seu projeto ou oportunidade..."
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-300 resize-none"
-                    required
+                    className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none transition-colors duration-300 resize-none ${
+                      formState.errors.message 
+                        ? 'border-red-500/50 focus:border-red-500' 
+                        : 'border-white/10 focus:border-blue-500'
+                    }`}
+                    disabled={formState.isSubmitting}
                   />
+                  {formState.errors.message && (
+                    <p className="mt-1 text-red-400 text-sm">{formState.errors.message}</p>
+                  )}
                 </div>
 
                 {/* Termos e envio */}
                 <div className="space-y-4">
-                  <label className="flex items-center space-x-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="agreeTerms"
-                      checked={formData.agreeTerms}
-                      onChange={handleInputChange}
-                      className="w-4 h-4 text-blue-600 bg-gray-900 border-white/20 focus:ring-blue-500 focus:ring-2 rounded"
-                      required
-                    />
-                    <span className="text-gray-300 text-sm">
-                      Concordo com os termos e políticas de privacidade.
-                    </span>
-                  </label>
+                  <div>
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="agreeTerms"
+                        checked={formState.data.agreeTerms}
+                        onChange={handleInputChange}
+                        className="w-4 h-4 text-blue-600 bg-gray-900 border-white/20 focus:ring-blue-500 focus:ring-2 rounded mt-1"
+                        disabled={formState.isSubmitting}
+                      />
+                      <span className="text-gray-300 text-sm leading-relaxed">
+                        Concordo com os termos e políticas de privacidade.
+                      </span>
+                    </label>
+                    {formState.errors.agreeTerms && (
+                      <p className="mt-1 text-red-400 text-sm">{formState.errors.agreeTerms}</p>
+                    )}
+                  </div>
                   
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
+                    disabled={formState.isSubmitting}
+                    className={`w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
+                      formState.isSubmitting
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white transform hover:scale-105 shadow-lg hover:shadow-blue-500/25'
+                    }`}
                   >
-                    <span>Enviar Mensagem</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    {formState.isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Enviando...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Enviar Mensagem</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
