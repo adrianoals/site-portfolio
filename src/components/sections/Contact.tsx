@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { downloadCV } from '@/utils/download';
 
 interface ContactFormData {
@@ -41,6 +41,20 @@ export default function Contact() {
     isSubmitted: false,
     submitError: undefined
   });
+
+  // Efeito para fazer a mensagem de sucesso desaparecer automaticamente
+  useEffect(() => {
+    if (formState.isSubmitted) {
+      const timer = setTimeout(() => {
+        setFormState(prev => ({
+          ...prev,
+          isSubmitted: false
+        }));
+      }, 5000); // 5 segundos
+
+      return () => clearTimeout(timer);
+    }
+  }, [formState.isSubmitted]);
 
   const validateForm = (): boolean => {
     const errors: ContactFormErrors = {};

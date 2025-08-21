@@ -35,7 +35,7 @@ export default function Projects() {
         '-30% no tempo de atendimento',
         '+40% no volume de doações'
       ],
-      technologies: ['Python', 'LangChain', 'OpenAI', 'WhatsApp API', 'PostgreSQL'],
+      technologies: ['n8n', 'LangChain', 'Supabase', 'WhatsApp API'],
       category: 'IA & Chatbots',
       link: '#'
     },
@@ -52,7 +52,7 @@ export default function Projects() {
         '-80% em dúvidas de consumo',
         '+90% de satisfação dos clientes'
       ],
-      technologies: ['Python', 'n8n', 'Google APIs', 'Next.js', 'PostgreSQL'],
+      technologies: ['Python', 'Django', 'n8n', 'Google APIs', 'Next.js', 'PostgreSQL'],
       category: 'Integração',
       link: '#'
     },
@@ -69,7 +69,7 @@ export default function Projects() {
         '+100% de transparência',
         '-90% nas reclamações'
       ],
-      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+      technologies: ['Python', 'Django', 'JavaScript', 'PostgreSQL', 'Tailwind CSS'],
       category: 'Sistemas Web',
       link: '#'
     },
