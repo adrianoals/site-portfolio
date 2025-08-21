@@ -1,0 +1,100 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="200" fill="url(#glowGradient)" opacity="0.4"/>
+  <circle cx="1100" cy="530" r="150" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1" stroke="#3b82f6" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="500" y1="0" x2="500" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+    <line x1="1100" y1="0" x2="1100" y2="630"/>
+  </g>
+  
+  <!-- Main content area -->
+  <rect x="150" y="150" width="900" height="330" rx="20" fill="rgba(30, 41, 59, 0.8)" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Profile image placeholder -->
+  <circle cx="250" cy="280" r="60" fill="url(#accentGradient)"/>
+  <text x="250" y="290" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">AL</text>
+  
+  <!-- Name and title -->
+  <text x="350" y="220" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">Adriano Lima Santos</text>
+  <text x="350" y="260" fill="#3b82f6" font-family="Arial, sans-serif" font-size="28" font-weight="600">Desenvolvedor Full-Stack & IA</text>
+  
+  <!-- Description -->
+  <text x="350" y="300" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="18" font-weight="400">
+    <tspan x="350" dy="0">Especializado em Python, Next.js e Inteligência Artificial</tspan>
+    <tspan x="350" dy="35">Criando soluções escaláveis e inteligentes</tspan>
+  </text>
+  
+  <!-- Tech stack icons -->
+  <g transform="translate(350, 380)">
+    <!-- Python -->
+    <rect x="0" y="0" width="40" height="40" rx="8" fill="#3776ab"/>
+    <text x="20" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PY</text>
+    
+    <!-- Next.js -->
+    <rect x="60" y="0" width="40" height="40" rx="8" fill="#000000"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">NX</text>
+    
+    <!-- React -->
+    <rect x="120" y="0" width="40" height="40" rx="8" fill="#61dafb"/>
+    <text x="140" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">R</text>
+    
+    <!-- AI -->
+    <rect x="180" y="0" width="40" height="40" rx="8" fill="#10b981"/>
+    <text x="200" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AI</text>
+    
+    <!-- Database -->
+    <rect x="240" y="0" width="40" height="40" rx="8" fill="#f59e0b"/>
+    <text x="260" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DB</text>
+  </g>
+  
+  <!-- Contact info -->
+  <text x="350" y="470" fill="#64748b" font-family="Arial, sans-serif" font-size="16">
+    <tspan x="350" dy="0">📧 dri.limasantos@gmail.com</tspan>
+    <tspan x="350" dy="25">🔗 linkedin.com/in/adrianoals</tspan>
+    <tspan x="350" dy="25">🐙 github.com/adrianoals</tspan>
+  </text>
+  
+  <!-- Decorative accent line -->
+  <line x1="150" y1="150" x2="1050" y2="150" stroke="url(#accentGradient)" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Bottom accent -->
+  <rect x="150" y="480" width="900" height="4" fill="url(#accentGradient)"/>
+</svg>
